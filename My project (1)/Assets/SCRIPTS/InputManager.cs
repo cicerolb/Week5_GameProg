@@ -30,7 +30,9 @@ public class InputManager : MonoBehaviour
 
             //When we hit WASD, we will record the movement to a variable
             playerControls.Newactionmap.Movement.performed += i => movementInput = i.ReadValue<Vector2>();
-        } 
+        }
+
+        playerControls.Enable();
         
     }
 
