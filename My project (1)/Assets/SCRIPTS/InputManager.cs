@@ -9,7 +9,10 @@ public class InputManager : MonoBehaviour
     public Vector2 movementInput;
     public float verticalInput;
     public float horizontalInput;
-    // Start is called before the first frame update
+
+
+    float moveAmount;
+
     public void HandleAllInput()
     {
         HandleMovementInput();
@@ -20,6 +23,9 @@ public class InputManager : MonoBehaviour
     {
         verticalInput = movementInput.y;
         horizontalInput = movementInput.x;
+
+        moveAmount = Mathf.Clamp01(Mathf.Abs(horizontalInput)+ Mathf.Abs(verticalInput));
+        PlayerManager.Instance.playerAnimation.UpdateAnimatorValues(0, moveAmount);
     }
 
     private void OnEnable() 
