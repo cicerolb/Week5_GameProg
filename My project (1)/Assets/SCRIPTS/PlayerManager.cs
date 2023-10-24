@@ -21,9 +21,16 @@ public class PlayerManager : MonoBehaviour
     public float movementSpeed;
     [Range(0f,1f)]
     public float rotationSpeed;
+    public float sprintSpeed;
+    public float walkSpeed;
     [Header("Player Scripts")]
     public PlayerAnimation playerAnimation;
     public Animator playerAnim;
+
+    [Header("Action States")]
+    public bool isSprinting;
+    public bool isWalking;
+    public bool isJumping;
 
 
     // Start is called before the first frame update
